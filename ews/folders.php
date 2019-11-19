@@ -79,7 +79,7 @@ class folders {
 			if ($response_message->ResponseClass != Enumeration\ResponseClassType::SUCCESS) {
 				$code = $response_message->ResponseCode;
 				$message = $response_message->MessageText;
-				sys::logger( sprintf( 'dvc\ews\folders :: Failed to find folders with "%s: %s"', $code, $message));
+				\sys::logger( sprintf( 'dvc\ews\folders :: Failed to find folders with "%s: %s"', $code, $message));
 				continue;
 
 			}
