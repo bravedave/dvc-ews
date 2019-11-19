@@ -1,0 +1,23 @@
+{
+	"name": "bravedave/dvc-ews",
+	"description": "EWS Interfaces for DVC",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"homepage": "http://brayworth.com",
+	"type": "library",
+	"license": "MIT",
+	"authors": [{
+		"name": "David Bray",
+		"email": "david@brayworth.com.au",
+		"homepage": "http://brayworth.com"
+	}],
+	"require": {
+		"bravedave/dvc": "dev-master",
+		"php-ews/php-ews": "^1.0"
+
+	},
+	"autoload": {
+		"psr-4": { "dvc\\ews\\": "ews/" }
+	}
+
+}
