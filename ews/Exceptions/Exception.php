@@ -9,7 +9,7 @@
 */
 
 
-namespace dvc\ews\exceptions;
+namespace dvc\ews\Exceptions;
 use dvc;
 
 class Exception extends dvc\Exception {}
