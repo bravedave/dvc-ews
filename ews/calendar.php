@@ -262,15 +262,17 @@ abstract class calendar {
 
 	static public function UpdateAppointment( calendaritem $item, $creds = NULL ) {
 		if ( $ews = client::instance( $creds)) {
-			$request = new Request\UpdateItemType();
+			$request = new Request\UpdateItemType;
 				$request->ConflictResolution = Enumeration\ConflictResolutionType::ALWAYS_OVERWRITE;
 				//~ $request->SendMeetingInvitationsOrCancellations = PhpEws\Enumeration\CalendarItemUpdateOperationType::SEND_TO_CHANGED_AND_SAVE_COPY;
 				$request->SendMeetingInvitationsOrCancellations = Enumeration\CalendarItemUpdateOperationType::SEND_TO_ALL_AND_SAVE_COPY;
 
-			$change = new Type\ItemChangeType();
-				$change->ItemId = new Type\ItemIdType();
+			$change = new Type\ItemChangeType;
+				$change->ItemId = new Type\ItemIdType;
 					$change->ItemId->Id = $item->change;
 					$change->ItemId->ChangeKey = $item->changekey;
+
+				$change->Updates = new ArrayType\NonEmptyArrayOfItemChangeDescriptionsType;
 
 			$f = self::field( Enumeration\UnindexedFieldURIType::ITEM_SUBJECT);
 				$f->CalendarItem->Subject = $item->subject;
