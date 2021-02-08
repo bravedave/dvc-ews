@@ -25,13 +25,13 @@ class inbox {
 
 	}
 
-    public function defaults() {
+	public function defaults() {
 		return (object)[
 			'inbox' => 'INBOX'
 
 		];
 
-    }
+	}
 
 	public function finditems( $params) {
 		$options = (object)array_merge([
